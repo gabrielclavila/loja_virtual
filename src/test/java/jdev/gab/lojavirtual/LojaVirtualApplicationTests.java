@@ -4,18 +4,15 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import jdev.gab.lojavirtual.controller.AcessoController;
 import jdev.gab.lojavirtual.model.Acesso;
-import jdev.gab.lojavirtual.repository.AcessoRepository;
-import jdev.gab.lojavirtual.service.AcessoService;
 
 @SpringBootTest(classes = LojaVirtualApplication.class)
 class LojaVirtualApplicationTests {
 
-	@Autowired
-	private AcessoService acessoService;
 	
-	//@Autowired
-	//private AcessoRepository acessoRepository;
+	@Autowired
+	private AcessoController acessoController;
 	
 	@Test
 	public void testCadastrarAcesso() {
@@ -23,8 +20,7 @@ class LojaVirtualApplicationTests {
 		Acesso acesso = new Acesso();
 		
 		acesso.setDescricao("ROLE_ADMIN");
-		//acessoRepository.save(acesso);
-		acessoService.save(acesso);
+		acessoController.salvarAcesso(acesso);
 	}
 
 }
