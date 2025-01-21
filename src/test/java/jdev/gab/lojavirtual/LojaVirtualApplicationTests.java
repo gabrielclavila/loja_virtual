@@ -14,8 +14,8 @@ class LojaVirtualApplicationTests {
 	@Autowired
 	private AcessoService acessoService;
 	
-	@Autowired
-	private AcessoRepository acessoRepository;
+	//@Autowired
+	//private AcessoRepository acessoRepository;
 	
 	@Test
 	public void testCadastrarAcesso() {
@@ -23,7 +23,8 @@ class LojaVirtualApplicationTests {
 		Acesso acesso = new Acesso();
 		
 		acesso.setDescricao("ROLE_ADMIN");
-		acessoRepository.save(acesso);
+		//acessoRepository.save(acesso);
+		acessoService.save(acesso);
 	}
 
 }
